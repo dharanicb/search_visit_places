@@ -16,18 +16,55 @@ const SearchBox = ({onSearch}) => {
     }
   }
 
+  const buttonList = [
+    {
+      id: 1,
+      buttonText: 'Mountain',
+    },
+    {
+      id: 2,
+      buttonText: 'Flowers',
+    },
+    {
+      id: 3,
+      buttonText: 'Beaches',
+    },
+    {
+      id: 4,
+      buttonText: 'Cities',
+    },
+  ]
+  const handleButtonClick = text => {
+    handleSearch()
+    setSearchTerm(text)
+  }
+
   return (
-    <div className="search-box">
-      <input
-        type="text"
-        placeholder="Search Box with Search Button in the Right"
-        value={searchTerm}
-        onChange={e => setSearchTerm(e.target.value)}
-      />
-      <button type="button" onClick={handleSearch}>
-        Search
-      </button>
-    </div>
+    <>
+      <div className="search-box">
+        <input
+          type="text"
+          placeholder="Search Box with Search Button in the Right"
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+        />
+        <button type="button" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
+      <div>
+        {buttonList.map(eachItem => (
+          <button
+            type="button"
+            className="btn-text"
+            key={eachItem.id}
+            onClick={() => handleButtonClick(eachItem.buttonText)}
+          >
+            {eachItem.buttonText}
+          </button>
+        ))}
+      </div>
+    </>
   )
 }
 

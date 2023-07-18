@@ -11,6 +11,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn-text {
+  margin: 10px;
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 9px;
+  height: 40px;
+  width: 140px;
+  border-width: 0px;
+  font-family: 'Roboto';
+  font-size: 18px;
+}
+
 .logo-icon {
   height: 80px;
   border-radius: 59%;
