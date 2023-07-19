@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const SearchBox = ({onSearch}) => {
   const [searchTerm, setSearchTerm] = useState('Animal')
+  const [searchBtn, setSearchBtn] = useState('')
 
   const handleSearch = async () => {
     const apiKey = '__QlKICeF05KxakJ4bgnIMtFk1QlteICIw1229B_Ozw'
@@ -44,17 +45,19 @@ const SearchBox = ({onSearch}) => {
     // handleSearch(text)
     setSearchTerm(text)
   }
-
+  const oninputSearch = () => {
+    setSearchTerm(searchBtn)
+  }
   return (
     <>
       <div className="search-box">
         <input
           type="text"
           placeholder="Search Box with Search Button in the Right"
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
+          value={searchBtn}
+          onChange={e => setSearchBtn(e.target.value)}
         />
-        <button type="button" onClick={handleSearch}>
+        <button type="button" onClick={() => oninputSearch()}>
           Search
         </button>
       </div>
