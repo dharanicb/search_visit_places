@@ -5,11 +5,17 @@ const ImageGrid = props => {
   return (
     <div className="image-grid">
       {images.map(image => (
-        <img
-          key={image.id}
-          src={image.urls.regular}
-          alt={image.alt_description}
-        />
+        <div>
+          <span>
+            <dfn data-info={image.alt_description}>
+              <img
+                key={image.id}
+                src={image.urls.regular}
+                alt={image.alt_description}
+              />
+            </dfn>
+          </span>
+        </div>
       ))}
     </div>
   )

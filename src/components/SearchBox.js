@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const SearchBox = ({onSearch}) => {
@@ -15,6 +15,12 @@ const SearchBox = ({onSearch}) => {
       console.error('Error fetching images:', error)
     }
   }
+
+  useEffect(() => {
+    if (searchTerm) {
+      handleSearch()
+    }
+  }, [searchTerm])
 
   const buttonList = [
     {
@@ -35,7 +41,7 @@ const SearchBox = ({onSearch}) => {
     },
   ]
   const handleButtonClick = text => {
-    handleSearch()
+    // handleSearch(text)
     setSearchTerm(text)
   }
 

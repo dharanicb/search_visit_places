@@ -2,6 +2,8 @@
 
 const ImageDetailsPopup = props => {
   const {image} = props
+  console.log(props)
+
   return (
     <div className="image-details-popup">
       <div className="image-details-content">
